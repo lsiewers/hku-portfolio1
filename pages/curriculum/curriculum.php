@@ -1,4 +1,5 @@
-<?php include '../core/header.php'; ?>
+<?php include "../../core/globals.php"; ?>
+<?php include "{$path}/core/header/header.php"; ?>
   
     -- MAIN CONTENT --
 

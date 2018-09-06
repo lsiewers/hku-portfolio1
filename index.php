@@ -1,4 +1,4 @@
-<?php include 'core/header.php'; ?>
+<?php include 'core/header/header.php'; ?>
 
 <main class="home">
     <section class="home__header">
@@ -7,4 +7,4 @@
     </section>
 </main>
 
-<?php include 'core/footer.php'; ?>
+<?php include 'core/footer/footer.php'; ?>
