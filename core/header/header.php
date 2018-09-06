@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>Luuk Siewers' Portfolio</title>
-    <?php include 'variables.php'; ?>
+    <?php include '../globals.php'; ?>
     <?php echo "<link href='{$path}/styles.css' rel='stylesheet' type='text/css' media='screen'>" ?>
   </head>
   <body>
