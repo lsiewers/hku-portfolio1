@@ -24,7 +24,7 @@
             foreach ($pages as $key => $navItem) {
               echo "
                 <li>
-                  <a href='{$path}/pages/{$key}.php'>{$navItem['text']}</a>
+                  <a href='{$path}/pages/{$key}/{$key}.php'>{$navItem['text']}</a>
                 </li>\n
               ";
             };

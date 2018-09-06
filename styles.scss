@@ -1,5 +1,17 @@
-body {
-  section {
-    background-color: red;
+// import all scss files to create 1 complete css file
+// order of imports could have impact on result, so keep an eye on that
+
+@import 'scss/all';
+@import 'pages/all';
+@import 'core/all';
+
+.home {
+  &__header {
+    @extend %flex-center;
+
+    &__img {
+      max-width: 50vw;
+      max-height: 75vh;
+    }
   }
 }
