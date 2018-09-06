@@ -7,8 +7,4 @@
     </section>
 </main>
 
-<<<<<<< HEAD
-<?php include 'core/header/footer.php'; ?>
-=======
 <?php include 'core/footer/footer.php'; ?>
->>>>>>> 3f7ecd42b091ddb483d9a549caa5abdc5506c61b

@@ -1,4 +1,4 @@
-<?php include 'core/header/header.php'; ?>
+<?php include "../../core/header/header.php"; ?>
   
     <main>
       <h1>Wie ben ik?</h1>
