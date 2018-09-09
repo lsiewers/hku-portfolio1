@@ -1,0 +1,37 @@
+.nav {
+  @extend %flex-center;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  background-color: #fff;
+
+  &__list {
+    display: inline-block;
+    margin: 0 auto;
+    border-bottom: 1px solid #EFEFEF;
+
+    &__item {
+      list-style: none;
+      display: inline-block;
+
+      button {
+        border: none;
+        background: none;
+        text-transform: uppercase;
+        cursor: pointer;
+        padding: 18px 24px;
+        letter-spacing: .1em;
+        font-weight: 300;
+        transition: .2s ease-in-out transform;
+
+        &:hover { transform: skewY(-5deg); }
+        &:active, &:focus { outline: none }
+
+        &.is--active { 
+          text-decoration: line-through;
+          transform: skewY(-5deg);
+        }
+      }
+    }
+  }
+}
