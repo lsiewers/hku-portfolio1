@@ -2,3 +2,11 @@
   width: $width;
   height: $height;
 }
+
+@mixin abs($top: null, $right: null, $bottom: null, $left: null) {
+  position: absolute;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}

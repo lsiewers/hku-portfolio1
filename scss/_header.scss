@@ -4,11 +4,13 @@
   position: fixed;
   top: 0;
   background-color: #fff;
+  z-index: 99;
 
   &__list {
     display: inline-block;
     margin: 0 auto;
     border-bottom: 1px solid #EFEFEF;
+    padding: 0;
 
     &__item {
       list-style: none;

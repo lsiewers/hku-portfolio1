@@ -6,27 +6,29 @@
   &__img {
     max-width: 45vw;
     max-height: 70vh;
-    animation: fade-in--img 1.8s ease-out forwards;
+    animation: fade-in--img 2s ease-out forwards;
     opacity: 0;
+    filter: blur(.1em);
     margin-right: 7vw;
   }
 
   &__titles {
     & > * {
-      transform: translateY(5px) skewY(0px);
-      transform-origin: bottom bottom;
+      transform: translateY(5px) skewY(0deg);
+      transform-origin: bottom left;
       opacity: 0;
+      filter: blur(.1em);
     }
 
     &__name {
-      animation: fade-in--title 1.6s 1.8s ease-out forwards;
-      font-size: 2.5rem;
+      animation: fade-in--title 1.5s 1.8s ease-out forwards;
+      font-size: $h1;
       margin-bottom: .5em;
     }
 
     &__study {
-      animation: fade-in--title 1.6s 2.2s ease-out forwards;
-      font-size: .8rem;
+      animation: fade-in--title 1.5s 2s ease-out forwards;
+      font-size: $h4;
       letter-spacing: .2em;
       font-family: Arial, Helvetica, sans-serif;
       text-transform: uppercase;
@@ -35,11 +37,11 @@
 }
 
 @keyframes fade-in--img {
-  from { opacity: 0; transform: translateY(5px); }
-  to { opacity: 1; transform: translateY(0px); }
+  from { filter: blur(.1em); opacity: 0; transform: translateY(5px); }
+  to { filter: blur(0em); opacity: 1; transform: translateY(0px); }
 }
 
 @keyframes fade-in--title {
-  from { opacity: 0; transform: translateY(5px) skewY(0deg); }
-  to { opacity: 1; transform: translateY(0px) skewY(-5deg); }
+  from { filter: blur(.1em); opacity: 0; transform: translateY(5px) skewY(0deg); }
+  to { filter: blur(0em); opacity: 1; transform: translateY(0px) skewY(-5deg); }
 }

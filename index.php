@@ -2,7 +2,8 @@
 <html>
   <head>
     <title>Luuk Siewers' Portfolio</title>
-    <?php echo "<link href='styles.css' rel='stylesheet' type='text/css' media='screen'>" ?>
+    <link href='styles.css' rel='stylesheet' type='text/css' media='screen'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body>
     <header>
@@ -18,27 +19,34 @@
               'contact' => array('text' => 'Contact'),
             );
 
-            // generate the array of pages to HTML navigation
-            foreach ($pages as $key => $navItem) {
+            // generate the list of pages to HTML navigation
+            foreach ($pages as $page => $navItem) {
               echo "
                 <li class='nav__list__item'>
-                  <button class='{$key}' onclick='routerLink(`{$key}`)'>{$key}</button>
+                  <button class='{$page}' onclick='routerLink(`{$page}`)'>{$pages[$page]['text']}</button>
                 </li>\n
               ";
             };
           ?>
           
           <script>
+            // load pages without reloading entire document and reusing the header and footer
             function routerLink(page) {
               const xhttp = new XMLHttpRequest();
-              const pathToFile = '/pages/' + page + '.php';
+              const pathToFile = 'pages/' + page + '.php';
 
               xhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
+                  // place where content will be loaded
                   document.getElementById('content').innerHTML = this.responseText;
                 }
               };
-
+              
+              // return scrollTop to 0
+              window.scrollTo(0, 0);
+              // set url
+              history.pushState(page, page, page);
+              // set HTML of requested file
               xhttp.open('GET', pathToFile, true);
               xhttp.send();
 
@@ -50,11 +58,17 @@
                 activeItem.classList.add('is--active')
               } 
             }
+            
+            // support page-specific urls
+            function getUrl() {
+                routerLink(window.location.pathname.substring(1));
+            } getUrl();
           </script>
         </ul>
       </nav>
     </header>
 
+    <!-- place where content will be loaded from navigation -->
     <main id="content">
       <!-- initial page -->
       <?php include 'pages/home.php' ?>

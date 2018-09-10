@@ -2,7 +2,6 @@
 // order of imports could have impact on result, so keep an eye on that
 
 @import 'scss/all';
-@import 'pages/all';
 
 * {
   box-sizing: border-box;
@@ -17,4 +16,5 @@ body {
   max-width: 1080px;
   margin: 40px auto;
   padding: 0 30px;
+  min-height: calc(100vh - 180px);
 }

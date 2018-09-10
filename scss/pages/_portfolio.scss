@@ -1,0 +1,23 @@
+.project {
+  width: 100%;
+
+  &__figure {
+    position: relative;
+    margin: 0;
+
+    // aspect-ratio
+    &::before {
+      position: absolute;
+      padding-bottom: 56.25%;
+    }
+
+    img { width: 100%; }
+
+    figcaption {
+      @include abs(30px, null, null, 18%);
+      transform: translateY(100%) skewY(-10deg);
+      font-size: $h1;
+      font-weight: bold;
+    }
+  }
+}
