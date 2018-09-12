@@ -15,7 +15,7 @@
     <br/>
     <h2>Waarom ga ik het studeren?</h2>
     <p>
-    Ik ga het studeren, omdat ik in mijn vorige studie (Interactieve mediavormgeving) erachter gekomen ben dat ik het erg leuk vindt om creatief te zijn en daar de vrijheid voor te hebben, goed na te denken over de werking van mijn ideeën (gebruiksvriendelijk bijvoorbeeld) en deze ideeën uit te werken tot werkend product waar ook techniek bij komt kijken. Ik zou al kunnen werken als front-end developer of webdesigner, maar ik wil meer leren als designer en developer en ik wil meer ontdekken en bedenken dan enkel online applicaties.
+      Ik ga het studeren, omdat ik in mijn vorige studie (Interactieve mediavormgeving) erachter gekomen ben dat ik het erg leuk vindt om creatief te zijn en daar de vrijheid voor te hebben, goed na te denken over de werking van mijn ideeën (gebruiksvriendelijk bijvoorbeeld) en deze ideeën uit te werken tot werkend product waar ook techniek bij komt kijken. Ik zou al kunnen werken als front-end developer of webdesigner, maar ik wil meer leren als designer en developer en ik wil meer ontdekken en bedenken dan enkel online applicaties.
     </p>
   </article>
 </div>

@@ -15,10 +15,9 @@
     &__item {
       list-style: none;
       display: inline-block;
+      font-family: $sans-serif;
 
       button {
-        border: none;
-        background: none;
         text-transform: uppercase;
         cursor: pointer;
         padding: 18px 24px;
@@ -27,7 +26,6 @@
         transition: .2s ease-in-out transform;
 
         &:hover { transform: skewY(-5deg); }
-        &:active, &:focus { outline: none }
 
         &.is--active { 
           text-decoration: line-through;

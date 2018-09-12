@@ -18,3 +18,15 @@ body {
   padding: 0 30px;
   min-height: calc(100vh - 180px);
 }
+
+// reset
+
+button {
+  appearance: none;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: inherit;
+
+  &:active, &:focus { outline: none }
+}

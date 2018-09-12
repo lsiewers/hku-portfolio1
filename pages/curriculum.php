@@ -1,1 +1,1 @@
-<img src="img/CV.jpg" width="100%">
+<img src="dist/img/CV.jpg" width="100%">
