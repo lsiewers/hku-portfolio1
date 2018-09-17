@@ -1,6 +1,7 @@
 
 <?php 
   $projects = array(
+    'Toelatingsopdracht',
     'JijEnOverijssel',
     'MVRDV',
     'Lifecycle',
@@ -16,7 +17,7 @@
     <button onclick='routerLink(`/portfolio/{$filename}`)'>
       <article class='project'>
         <figure class='project__figure'>
-          <img src='dist/img/portfolio/{$filename}.jpg' alt='{$project}'>
+          <img src='dist/img/portfolio/{$filename}/{$filename}_header.jpg' alt='{$project}'>
           <figcaption>{$project}</figcaption>
         </figure>
       </article>

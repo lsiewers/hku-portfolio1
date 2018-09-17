@@ -10,7 +10,6 @@
           'portfolio'  => array('text' => 'Portfolio'),
           'about' => array('text' => 'Over mij'),
           'curriculum' => array('text' => 'CV'),
-          'contact' => array('text' => 'Contact'),
         );
 
         // generate the list of pages to HTML navigation
@@ -55,7 +54,10 @@
             }
           })
         }
-        
+
+        // history back
+        window.onpopstate = function(e) { routerLink(e.state) };
+
         // support page-specific urls
         function getUrl() {
           if(window.location.pathname === '/') {
@@ -63,7 +65,7 @@
           } else {
             routerLink(window.location.pathname);
           }
-        } getUrl();
+        } window.onload = getUrl();
       </script>
     </ul>
   </nav>
