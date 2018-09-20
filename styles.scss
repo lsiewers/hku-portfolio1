@@ -13,7 +13,7 @@ body {
 
 #content {
   width: 100%;
-  max-width: 1080px;
+  max-width: 1200px;
   margin: 40px auto;
   padding: 0 30px;
   min-height: calc(100vh - 180px);
@@ -29,4 +29,17 @@ button {
   font-family: inherit;
 
   &:active, &:focus { outline: none }
+}
+
+figure, ul {
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6, blockquote {
+  font-family: $serif;
+}
+
+p, figcaption { 
+  font-family: $sans-serif;
 }

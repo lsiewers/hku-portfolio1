@@ -1,6 +1,8 @@
 <div class="about">
-  <h1>Wie ben ik?</h1>
+  <h1>Over mij</h1>
+
   <article>
+  <h1>Wie ben ik?</h1>
     <p>
       Ik ben een 20-jarige student Interaction Design aan de HKU. Mijn interesses liggen dan ook voornamelijk bij design, technologie en een stukje psychologie.
       Naast studiegerelateerde interesses, ben ik een groot fan van muziek (genres blues, rock & soul) en boksen.

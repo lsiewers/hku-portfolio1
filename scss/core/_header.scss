@@ -3,8 +3,35 @@
   width: 100%;
   position: fixed;
   top: 0;
-  background-color: #fff;
+  // background-color: #fff;
   z-index: 99;
+
+  &::before {
+    content: '';
+    @include size;
+    position: absolute;
+    pointer-events: none;
+    background-color: rgba(white, .4);
+    z-index: -1;
+  }
+
+  &__logo {
+    font-family: $serif;
+    text-align: left;
+    font-size: .8em;
+    position: absolute;
+    left: 10px;
+    top: 20px;
+    transform: skewY(-10deg);
+
+    span {
+      display: block;
+      font-family: $sans-serif;
+      font-size: .6em;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+    }
+  }
 
   &__list {
     display: inline-block;
@@ -20,7 +47,7 @@
       button {
         text-transform: uppercase;
         cursor: pointer;
-        padding: 18px 24px;
+        padding: 20px 24px;
         letter-spacing: .1em;
         font-weight: 300;
         transition: .2s ease-in-out transform;

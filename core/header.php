@@ -1,22 +1,30 @@
 
 <header>
   <nav class="nav">
+    
+    <h1>
+      <button class="nav__logo" onclick="routerLink('/home')">
+        Luuk Siewers
+        <span>Interaction design</span>
+      </button>
+    </h1>
+
     <ul class="nav__list">
       <?php 
         // list of all pages
-        $pages = array(
+        $pages = [
           // 'filename (without extension)' => array('text' (key) => 'name to be displayed')
-          'home'  => array('text' => 'Home'),
-          'portfolio'  => array('text' => 'Portfolio'),
-          'about' => array('text' => 'Over mij'),
-          'curriculum' => array('text' => 'CV'),
-        );
+          'portfolio'  => ['text' => 'Portfolio'],
+          'about' => ['text' => 'Over mij'],
+          'curriculum' => ['text' => 'CV'],
+          'logbook' => ['text' => 'Logboek'],
+        ];
 
         // generate the list of pages to HTML navigation
         foreach ($pages as $page => $navItem) {
           echo "
             <li class='nav__list__item'>
-              <button class='{$page}' onclick='routerLink(`/{$page}`)'>{$pages[$page]['text']}</button>
+              <button class='nav--{$page}' onclick='routerLink(`/{$page}`)'>{$pages[$page]['text']}</button>
             </li>\n
           ";
         };
@@ -47,9 +55,9 @@
 
           // set and/or remove the class of active of the main menu items
           navItems.forEach(item => {
-            if (item.classList.contains(activePage) && !item.classList.contains('is--active')) {
+            if (item.classList.contains('nav--' + activePage) && !item.classList.contains('is--active')) {
               item.classList.add('is--active')
-            } else if (!item.classList.contains(activePage) && item.classList.contains('is--active')) {
+            } else if (!item.classList.contains('nav--' + activePage) && item.classList.contains('is--active')) {
               item.classList.remove('is--active')
             }
           })

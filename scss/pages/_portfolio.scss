@@ -4,20 +4,33 @@
   &__figure {
     position: relative;
     margin: 0;
+    display: flex;
+    flex-direction: column;
 
-    // aspect-ratio
-    &::before {
-      position: absolute;
-      padding-bottom: 56.25%;
+    img { 
+      height: calc(100vh - 80px);
+      width: 100%;
+      object-fit: contain;
+      order: 1;
+      transform: scale(.95);
+      filter: blur(4px);
+      transition: transform ease-out .6s, filter ease-out .6s;
+      transform-origin: center center;
+
+      &:hover {
+        transform: scale(1);
+        filter: blur(0px);
+      }
     }
 
-    img { width: 100%; }
-
     figcaption {
-      @include abs(30px, null, null, 18%);
-      transform: translateY(100%) skewY(-10deg);
+      position: absolute;
+      top: 30px;
+      left: 10%;
+      transform: skewY(-10deg);
       font-size: $h1;
-      font-weight: bold;
+      font-family: $serif;
+      order: 0;
     }
   }
 }

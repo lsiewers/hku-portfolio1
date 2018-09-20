@@ -28,8 +28,8 @@
 
     &__study {
       animation: fade-in--title 1.5s 2s ease-out forwards;
-      font-size: $h4;
-      letter-spacing: .2em;
+      font-size: $h3;
+      letter-spacing: .25em;
       font-family: $sans-serif;
       text-transform: uppercase;
     }
@@ -40,6 +40,7 @@
       font-family: $sans-serif;
       position: relative;
       left: -.25em;
+      button { font-size: .8em; }
     }
   }
 }

@@ -1,5 +1,7 @@
-$sans-serif: Arial, Helvetica, sans-serif;
-$serif: 'Times New Roman', Times, serif;
+@import url('https://fonts.googleapis.com/css?family=Bitter:700|Ubuntu+Mono:400,700&subset=latin-ext');
+
+$sans-serif: 'Ubuntu Mono', sans-serif;
+$serif: 'Bitter', Times, serif;
 
 $h1: 2.5rem;
 $h2: 2rem;
