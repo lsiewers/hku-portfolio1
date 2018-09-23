@@ -1,5 +1,5 @@
 <div class="about">
-  <h1>Over mij</h1>
+  <h1 class="about__title">Over mij</h1>
 
   <article>
   <h1>Wie ben ik?</h1>
@@ -20,4 +20,11 @@
       Ik ga het studeren, omdat ik in mijn vorige studie (Interactieve mediavormgeving) erachter gekomen ben dat ik het erg leuk vindt om creatief te zijn en daar de vrijheid voor te hebben, goed na te denken over de werking van mijn ideeën (gebruiksvriendelijk bijvoorbeeld) en deze ideeën uit te werken tot werkend product waar ook techniek bij komt kijken. Ik zou al kunnen werken als front-end developer of webdesigner, maar ik wil meer leren als designer en developer en ik wil meer ontdekken en bedenken dan enkel online applicaties.
     </p>
   </article>
+
+<article>
+  <h1>Wat is mijn favoriete interactieve gadget?</h1>
+  <p>
+    Mijn favoriete gadget is de Google Chromecast. Super klein, werkt snel en je kan met je mobiel de afstandsbediening volledig vervangen van de TV. Je kunt zelfs met alle apps als Netflix, YouTube en NPO veel gebruiksvriendelijker de TV bedienen.
+  </p>
+</article>
 </div>

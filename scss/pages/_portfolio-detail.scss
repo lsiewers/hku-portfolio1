@@ -29,9 +29,11 @@
 
     &__info {
       display: flex;
+      flex-wrap: wrap;
 
       li {
         list-style: none;
+        max-width: 33%;
 
         &:not(:first-child) { margin-left: 60px; }
 
@@ -70,7 +72,7 @@
 
     p { 
       padding: 40px;
-      max-width: 400px;
+      max-width: 480px;
       line-height: 1.6;
       font-size: .9em;
     }
@@ -78,13 +80,14 @@
     img { 
       max-height: 60vh; 
       width: 100%;
-      object-fit: contain
+      object-fit: contain;
     }
 
     figcaption {
       margin-top: 30px;
       font-size: .75em;
-      color: #0e0e0e;
+      opacity: .5;
+      max-width: 360px;
     }
 
     &.img--left,
@@ -95,8 +98,13 @@
       p { width: 50%; }
     } 
 
+    &.img--left figure { padding-right: 40px; }
+
     &.img--right {
-      figure { order: 1; }
+      figure {
+        order: 1; 
+        padding-left: 40px;
+      }
       figcaption { float: right }
       p { order: 0; }
     }
@@ -109,6 +117,19 @@
         position: relative;
         left: -60px;
       }
+      img { padding-top: 40px; }
     }
+  }
+
+  &__back {
+    margin: 180px auto 40px;
+    display: block;
+    font-size: 1em;
+    font-family: $sans-serif;
+    transform: skewY(0deg);
+    transition: transform ease-out .4s;
+    font-weight: bold;
+
+    &:hover { transform: skewY(-10deg); }
   }
 }

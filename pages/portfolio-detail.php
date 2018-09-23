@@ -3,18 +3,21 @@
   Content in separate project files
 -->
 
+<?php include '../../environment.php' ?>
+
 <?php 
   $filename = strtolower($name);
-  $imgpath = '/dist/img/portfolio/'.$filename;
+  $imgpath =  $GLOBALS['urlPath'] . '/dist/img/portfolio/' . $filename;
 ?>
 
 <article class="portfolio-detail">
   <header class="portfolio-detail__header">
+
     <?php
       // header
       echo"
         <figure class='portfolio-detail__header__heading'>
-          <img src='{$imgpath}/{$filename}_header.jpg' alt='{$project}'>
+          <img src='{$imgpath}/{$filename}_header.jpg' alt='{$name}'>
           <figcaption>{$name}</figcaption>
         </figure>
 
@@ -56,4 +59,8 @@
       }
     ?>
   </main>
+
+  <footer>
+    <button class="portfolio-detail__back" onclick="routerLink('/portfolio')">Terug naar overzicht</button>
+  </footer>
 </article>
