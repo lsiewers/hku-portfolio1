@@ -24,7 +24,7 @@
       ),
       '2' => array(
         'layout' => 'full',
-        'img' => 'blog_2.jpg',
+        'img' => 'blog_2.jpg', 
         'imgcaption' => 'Thema: High Noon',
         'story' => '
         <i>Vr. 15 Februari</i><br><br>
