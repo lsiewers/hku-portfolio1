@@ -1,1 +1,0 @@
-<img src="dist/img/CV.jpg" width="100%">

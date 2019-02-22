@@ -1,0 +1,36 @@
+.contact {
+  max-width: 600px;
+  padding: 40px;
+  margin: 0 auto;
+
+  p {
+    line-height: 1.2;
+  }
+
+  form {
+    label {
+      margin-top: 20px;
+      display: inline-block;
+    }
+
+    input[type='text'], textarea {
+      width: 100%;
+      appearance: none;
+      border: none;
+      border-bottom: 3px solid #eee;
+      line-height: 1.6;
+      margin-top: 10px;
+      padding: 10px 0;
+      outline: none;
+
+      &:focus {
+        border-color: grey;
+      }
+    }
+
+    input[type=submit] {
+      float: right;
+      padding: 20px 0;
+    }
+  }
+}

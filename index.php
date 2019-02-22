@@ -1,19 +1,35 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Luuk Siewers' Portfolio</title>
-    <link href="<?php echo $GLOBALS['urlPath'] .'dist/styles.css'?>" rel="stylesheet" type="text/css" media="screen">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  </head>
-  <body>
-    <?php include 'core/header.php' ?>
+<!--
+  Code by Luuk Siewers - 2018
+  Portfolio site
+  According HTML/CSS lessons HKU by Ton Markus
+-->
+    <?php 
+      include 'core/header.php';
+    ?>
+
+    <!-- background shapes -->
+    <figure class="background-shapes">
+      <!-- <img class="grid" src="dist/img/grid-01.svg"> -->
+      <img class="custom-shape" src="dist/img/background/custom-shape.svg">
+      <img class="circle" src="dist/img/background/circle.svg">
+      <?php 
+        if ($page !== 'portfolio') {
+          echo "<img class='triangle_home' src='dist/img/background/triangle_home.svg'>";
+        }
+      ?>
+    </figure>
 
     <!-- place where content will be loaded from navigation -->
-    <main id="content">
-      <!-- initial page -->
-      <?php include 'pages/home.php' ?>
-    </main>
+    <div id="content">
+    <script type="text/javascript">
+      document.onload = function() {
+        return `<?php
+          include "pages/{$GLOBALS['pages'][$page]['filename']}.php";
+        ?>`;
+      }
+    </script>
 
-    <?php include 'core/footer.php' ?>
+      <?php include 'core/footer.php' ?>
+    </div>
   </body>
 </html>

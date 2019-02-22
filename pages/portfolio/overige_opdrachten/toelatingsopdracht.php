@@ -69,5 +69,3 @@
     )
   );
 ?>
-
-<?php include '../portfolio-detail.php'; ?>

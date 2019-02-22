@@ -1,38 +1,124 @@
-.project {
-  margin: 40px 0;
-  width: 100%;
+.portfolio {
+  display: flex;
+  flex-wrap: nowrap;
 
-  &__figure {
-    position: relative;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
+  &__categories {
+    width: 30%;
+    padding-top: 60px;
 
-    img { 
-      padding: 20px;
-      height: 60vh;
-      width: 100%;
-      object-fit: contain;
-      order: 1;
-      transform: scale(.95);
-      filter: blur(4px);
-      transition: transform ease-out .4s, filter ease-out .4s;
-      transform-origin: center center;
+    ul {
+      padding-top: 40px;
+      display: flex;
+      flex-direction: column;
 
-      &:hover {
-        transform: scale(1);
-        filter: blur(0px);
+      h1 {
+        font-family: $sans-serif;
+        font-weight: normal;
+        font-size: 1.4em;
+      }
+
+      li {
+        padding-left: 30px;
+        margin-top: 10px;
       }
     }
 
-    figcaption {
-      position: absolute;
-      top: 30px;
-      left: 10%;
-      transform: skewY(-10deg);
-      font-size: $h2;
-      font-family: $serif;
-      order: 0;
+  }
+
+  &__slider {
+    width: 70%;
+    
+    header {
+      width: 100%;
+
+      h1 {
+        font-family: $sans-serif;
+        font-weight: normal;
+        font-size: 1.4em;
+      }
+
+      &, & > div {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-weight: bold;
+      }
+
+      & > div {
+        button { padding: 0 20px; }
+      }
+    }
+
+    main {    
+      height: calc(100vh - 240px);
+
+      ul li {
+      
+        article {
+          display: flex;
+          padding-top: 40px;
+
+          div {
+            width: 60%;
+
+            h1 {
+              font-size: 3em;
+              margin: 10px 0;
+            }
+
+            blockquote {
+              margin-left: 0;
+              font-family: $sans-serif;
+              font-weight: normal;
+              font-size: 1.4em;
+              font-style: italic;
+            }
+
+            ul {
+              display: flex;
+
+              li {
+                &:not(:first-child) { margin-left: 40px; }
+
+                h3 { 
+                  font-family: $sans-serif; 
+                  font-size: .8em;
+                  margin-bottom: 0;
+                }
+                p { 
+                  font-size: 1em;
+                  margin-top: 10px;
+                }
+              }
+            }
+            .see-project { 
+              display: block;
+              margin-top: 10px;
+              padding: 10px 0;
+              font-size: 1.4em;
+            }
+          }
+
+          figure { 
+            width: 60%;
+            margin-right: -20%;
+
+            img { 
+              width: 100%;
+              height: auto;
+              object-fit: contain; 
+            }
+          }
+        }
+      }
+    }
+
+    footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      padding: 80px 20px 80px 0;
     }
   }
 }

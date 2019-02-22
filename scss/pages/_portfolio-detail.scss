@@ -16,8 +16,6 @@
       }
 
       figcaption {
-        transform: skewY(-10deg);
-        transform-origin: center center;
         font-size: $h1;
         font-weight: bold;
         font-family: $serif;
@@ -30,6 +28,7 @@
     &__info {
       display: flex;
       flex-wrap: wrap;
+      margin-top: 20px;
 
       li {
         list-style: none;
@@ -74,10 +73,15 @@
       padding: 40px;
       max-width: 480px;
       line-height: 1.6;
-      font-size: .9em;
+      font-size: .9em; 
+
+      a { 
+        text-decoration: underline;
+        font-size: 1.2em;
+      }
     }
 
-    img { 
+    img, video { 
       max-height: 60vh; 
       width: 100%;
       object-fit: contain;
@@ -122,14 +126,13 @@
   }
 
   &__back {
-    margin: 180px auto 40px;
-    display: block;
+    @extend %centralize-horizontal;
+    position: relative;
+    margin: 180px 0 40px;
+    display: inline-block;
     font-size: 1em;
     font-family: $sans-serif;
-    transform: skewY(0deg);
     transition: transform ease-out .4s;
     font-weight: bold;
-
-    &:hover { transform: skewY(-10deg); }
   }
 }
