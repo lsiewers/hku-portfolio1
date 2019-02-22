@@ -1,0 +1,15 @@
+.sitemap {
+  padding: 30px 60px;
+
+  ul, ol, li {
+    margin-top: 20px;
+  }
+
+  ol li {
+    list-style: circle;
+  }
+
+  li {
+    list-style: initial;
+  }
+}

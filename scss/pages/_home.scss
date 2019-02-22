@@ -1,47 +1,115 @@
 
 
 .home {
-  @extend %flex-center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: stretch;
+
+  @include mappy-bp(max-height 800px) {
+    height: 100vh;
+  }
 
   &__img {
-    max-width: 30vw;
-    max-height: 60vh;
+    width: calc(50% - 400px);
+    max-height: 55vh;
     animation: fade-in--img 2s ease-out forwards;
     opacity: 0;
     filter: blur(.1em);
-    margin-right: 7vw;
+
+    object-fit: contain;
   }
 
   &__titles {
-    & > * {
-      transform: translateY(5px) skewY(0deg);
-      transform-origin: bottom left;
-      opacity: 0;
-      filter: blur(.1em);
+    padding: 100px 0;
+    transform: rotate(-30deg);
+    position: relative;
+    width: calc(50% - 200px);
+    left: 6vw;
+
+    h1 {
+      font-size: 1.2em; 
+    }
+    
+    p {
+      height: 0;
+      font-size: 1em; 
+      
+      svg {
+        @include rel(-10vw, null, null, 2vw);
+        width: 21vw;
+        transform: rotate(5deg);
+
+        text { 
+          font-weight: 400;
+        }
+      }
+    }
+  }
+
+  &__projects {
+    width: 600px;
+    padding-left: 200px;
+    padding-top: 60px;
+
+    header {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+
+      h1 {
+        font-family: $sans-serif;
+        font-weight: normal;
+      }
+
+      div {
+        display: flex;
+        align-items: center;
+
+        p { font-weight: bold }
+        
+        button {
+          padding: 0 20px;
+        }
+      }
     }
 
-    &__name {
-      animation: fade-in--title 1.5s 1.8s ease-out forwards;
-      font-size: $h1;
-      margin-bottom: .5em;
+    main {
+      h1 {
+        font-size: 3em;
+        margin: 40px 0;
+      }
+      
+      ul li {
+        article img {
+          width: 120%;
+          position: relative;
+          right: 0vw;
+          mix-blend-mode: multiply;
+        }
+
+        a {
+          float: right;
+          padding: 20px;
+        }
+      }
     }
 
-    &__study {
-      animation: fade-in--title 1.5s 2s ease-out forwards;
-      font-size: $h3;
-      letter-spacing: .25em;
-      font-family: $sans-serif;
-      text-transform: uppercase;
-    }
+    footer {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      padding-top: 20px;
 
-    &__buttons {
-      animation: fade-in--title 1.5s 2.2s ease-out forwards;
-      color: black;
-      font-family: $sans-serif;
-      position: relative;
-      left: -.25em;
-      button { font-size: .8em; }
+      a {
+        padding: 20px 20px 0;
+      }
     }
+  }
+
+ &__info {
+    width: 33vw;
+    position: relative;
+    z-index: 1;
   }
 }
 

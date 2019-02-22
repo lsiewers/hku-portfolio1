@@ -1,0 +1,36 @@
+.background-shapes {
+  position: fixed;
+  top: 0;
+  left: 0;
+  @include size;
+  z-index: -2;
+
+  img.grid {
+    @include size;
+    opacity: .1;
+    object-fit: fill;
+  }
+
+  img {
+    position: absolute;
+  }
+
+  .circle {
+    height: 100vh;
+    top: 30px;
+    left: 0;
+    transform: translateX(-50%);
+  }
+
+  .custom-shape {
+    height: 100vh;
+    top: 80px;
+    right: -20px;
+  }
+
+  .triangle_home {
+    width: 100vw;
+    bottom: -10vw;
+    left: -10vw;
+  }
+}

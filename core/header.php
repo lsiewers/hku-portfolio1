@@ -1,83 +1,59 @@
 
-<header>
-      <nav class="nav">
-        
-        <h1>
-          <button class="nav__logo" onclick="routerLink('/home')">
-            Luuk Siewers
-            <span>Interaction design</span>
-          </button>
-        </h1>
 
-        <ul class="nav__list">
-          <?php 
-            // list of all pages
-            $pages = array(
-              // 'filename (without extension)' => array('text' (key) => 'name to be displayed')
-              'portfolio'  => array('text' => 'Portfolio'),
-              'about' => array('text' => 'Over mij'),
-              'curriculum' => array('text' => 'CV'),
-              'logbook' => array('text' => 'Logboek'),
-            );
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <?php
+      include 'pages.php';
+      include 'environment.php';
+    ?>
+    <title>Luuk Siewers' Portfolio</title>
+    <link href="<?php echo "{$GLOBALS['urlPath']}" ?>/dist/styles.css" rel="stylesheet" type="text/css" media="screen">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
 
-            // generate the list of pages to HTML navigation
-            foreach ($pages as $page => $navItem) {
-              echo "
-                <li class='nav__list__item'>
-                  <button class='nav--{$page}' onclick='routerLink(`/{$page}`)'>{$pages[$page]['text']}</button>
-                </li>\n
-              ";
-            };
-          ?>
-          
-          <?php include 'environment.php' ?>
+  <header class="header">
+    <nav class="nav">
+      
+      <h1>
+        <a class="nav__logo" href='<?php echo $GLOBALS['urlPath'] ?>'>
+          Luuk Siewers
+          <span>Interaction design</span>
+        </a>
+      </h1>
+
+      <ul class="nav__list">
+        <?php
+
+          $pages = $GLOBALS['pages'];
+          $portfolioParam = '';
+
+          // generate the list of pages to HTML navigation
+          foreach ($pages as $page => $navItem) {
+            echo "
+              <li class='nav__list__item'>
+                <a class='{$status}' href='{$pages[$page]['filename']}'>{$pages[$page]['text']}</a>
+              </li> \n
+            ";
+          } 
+        ?>
+
+        <!-- switch experience button!!! -->
+        <!-- <li class='nav__list__item'>
+          <button class='switch-button' onclick="switchStyle()">Crazy switch</button>
           <script>
-            // load pages without reloading entire document and reusing the header and footer (SPA)
-            function routerLink(page) {
-              const url = "<?php echo $GLOBALS['urlPath'] ?>";
-              const xhttp = new XMLHttpRequest();
-              const urlState = page !== '/~luuk.siewers/' ? page : '/home';
-              const pathToFile =  url + '/pages/' + urlState + '.php';
-              const activePage = page.substring(1);
-              const navItems = document.querySelectorAll(`.nav__list__item button`)
-
-              xhttp.onreadystatechange = function() {
-                if (this.readyState == 4 && this.status == 200) {
-                  // place where content will be loaded
-                  document.getElementById('content').innerHTML = this.responseText;
-                }
-              };
+            function switchStyle() {
+              const cssLink = document.querySelector('head link[href$=".css"]');
               
-              // return scrollTop to 0
-              window.scrollTo(0, 0);
-              // set url
-              history.pushState(page, url + urlState, url + urlState);
-              // set HTML of requested file
-              xhttp.open('GET', pathToFile, true);
-              xhttp.send();
-
-              // set and/or remove the class of active of the main menu items
-              navItems.forEach(item => {
-                if (item.classList.contains('nav--' + activePage) && !item.classList.contains('is--active')) {
-                  item.classList.add('is--active')
-                } else if (!item.classList.contains('nav--' + activePage) && item.classList.contains('is--active')) {
-                  item.classList.remove('is--active')
-                }
-              })
-            }
-
-            // history back
-            window.onpopstate = function(e) { routerLink(e.state) };
-
-            // support page-specific urls
-            function getUrl() {
-              if(window.location.pathname === '/') {
-                routerLink('/home');
+              if (cssLink.getAttribute('href') === 'dist/styles.css') { 
+                cssLink.setAttribute('href', 'dist/crazy.css');
               } else {
-                routerLink(window.location.pathname);
+                cssLink.setAttribute('href', 'dist/styles.css');
               }
-            } window.onload = getUrl();
+            }
           </script>
-        </ul>
-      </nav>
-    </header>
+        </li> -->
+      </ul>
+    </nav>
+  </header>

@@ -2,12 +2,18 @@
   Here the template is structured
   Content in separate project files
 -->
+<?php
+  include 'core/categories.php';
 
-<?php include '../../environment.php' ?>
-
+  $subjectPath = scandir("pages/portfolio/{$GLOBALS['categories'][$_GET['category']]['subjects'][$_GET['subject']]['foldername']}");
+  $subjectPath = array_slice($subjectPath, 1, count($subjectPath));
+  $categoryPath = $GLOBALS['categories'][$_GET['category']]['subjects'][$_GET['subject']]['foldername'];
+  include 'pages/portfolio/' . $categoryPath . '/' . $subjectPath[$_GET['project']];
+?>
 <?php 
-  $filename = strtolower($name);
-  $imgpath =  $GLOBALS['urlPath'] . '/dist/img/portfolio/' . $filename;
+  $filename = str_replace('.php', '', $subjectPath[$_GET['project']]);
+  $imgpath = $GLOBALS['urlPath'] . '/dist/img/portfolio/' . $categoryPath . '/' . $filename;
+  $vidpath = $GLOBALS['urlPath'] . '/dist/vid/portfolio/'  . $categoryPath . '/' . $filename;
 ?>
 
 <article class="portfolio-detail">
@@ -17,7 +23,7 @@
       // header
       echo"
         <figure class='portfolio-detail__header__heading'>
-          <img src='{$imgpath}/{$filename}_header.jpg' alt='{$name}'>
+          <img src='{$imgpath}/{$filename}_header.jpg' alt='Headerfoto {$name}'>
           <figcaption>{$name}</figcaption>
         </figure>
 
@@ -50,17 +56,29 @@
         echo"
           <section class='portfolio-detail__article img--{$article['layout']}'>
             <figure>
-              <img src='{$imgpath}/{$article['img']}' />
-              <figcaption>{$article['imgcaption']}</figcaption>
-            </figure>
-            <p>{$article['story']}</p>
-          </section>
+        ";
+        
+        if (isset($article['img'])) {
+          echo "<img src='{$imgpath}/{$article['img']}' />";
+        }
+        else if (isset($article['vid'])) {
+          echo "<video controls>
+            <source src='{$vidpath}/{$article['vid']}' />
+          </video>
+          ";
+        }
+        
+        echo"
+          <figcaption>{$article['imgcaption']}</figcaption>
+          </figure>
+          <p>{$article['story']}</p>
+        </section>
         ";
       }
     ?>
   </main>
 
   <footer>
-    <button class="portfolio-detail__back" onclick="routerLink('/portfolio')">Terug naar overzicht</button>
+    <a class="portfolio-detail__back" href="<?php echo "?page=1&category={$_GET['category']}&subject={$_GET['subject']}" ?>">< Terug naar overzicht</a>
   </footer>
 </article>

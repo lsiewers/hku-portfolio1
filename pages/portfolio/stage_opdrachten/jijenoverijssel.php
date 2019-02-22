@@ -1,7 +1,7 @@
 <?php
   // content
   $content =  array(
-    $name = 'JijEnOverijssel',
+    $name = 'Jij&Overijssel',
     $info =  array(
       'type' => 'Stageopdracht, Boerdam',
       'client' => 'Provincie Overijssel',
@@ -97,5 +97,3 @@
     )
   );
 ?>
-
-<?php include '../portfolio-detail.php'; ?>

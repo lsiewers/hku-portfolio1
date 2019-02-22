@@ -1,64 +1,47 @@
+.header {
+  position: relative;
+  z-index: 99;
+  padding: 20px 40px 0;
+}
+
 .nav {
-  @extend %flex-center;
+  display: flex;
+  justify-content: space-between;
   width: 100%;
-  position: fixed;
-  top: 0;
   // background-color: #fff;
   z-index: 99;
 
-  &::before {
-    content: '';
-    @include size;
-    position: absolute;
-    pointer-events: none;
-    background-color: rgba(white, .4);
-    z-index: -1;
-  }
+  h1 { margin: 0 }
 
   &__logo {
     font-family: $serif;
-    text-align: left;
     font-size: .8em;
-    position: absolute;
-    left: 10px;
-    top: 20px;
-    transform: skewY(-10deg);
 
     span {
       display: block;
+      font-style: italic;
       font-family: $sans-serif;
-      font-size: .6em;
-      text-transform: uppercase;
-      letter-spacing: .1em;
+      font-size: .8em;
+      font-weight: normal;
     }
   }
 
   &__list {
     display: inline-block;
-    margin: 0 auto;
-    border-bottom: 1px solid #EFEFEF;
     padding: 0;
 
     &__item {
       list-style: none;
       display: inline-block;
-      font-family: $sans-serif;
 
-      button {
-        text-transform: uppercase;
-        cursor: pointer;
-        padding: 20px 24px;
-        letter-spacing: .1em;
-        font-weight: 300;
+      a, button {
+        padding: 10px 24px;
         transition: .2s ease-in-out transform;
-
-        &:hover { transform: skewY(-5deg); }
-
-        &.is--active { 
-          text-decoration: line-through;
-          transform: skewY(-5deg);
-        }
+        display: block;
+        font-size: 1em;
       }
+
+      .switch-button { color: red; }
     }
   }
 }
